@@ -1,0 +1,71 @@
+{
+    "school_id": "3df715dc-e177-4b71-907c-af530ff9f8ca",
+    "users": [
+        {
+            "name": "",
+            "xuehao": "201500788",
+            "password": "632108",
+            "seat_id": "191049",
+            "time_start": "09:00",
+            "time_end": "17:30",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": false
+        },
+        {
+            "name": "扬",
+            "xuehao": "201500789",
+            "password": "201500789",
+            "seat_id": "191048",
+            "time_start": "09:00",
+            "time_end": "17:30",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": true
+        },
+        {
+            "name": "王菲",
+            "xuehao": "201500797",
+            "password": "hwyxyxy",
+            "seat_id": "191050",
+            "time_start": "09:30",
+            "time_end": "17:30",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": false
+        },
+        {
+            "name": "zhan",
+            "xuehao": "201500799",
+            "password": "201500799",
+            "seat_id": "191051",
+            "time_start": "10:00",
+            "time_end": "17:30",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": false
+        },
+        {
+            "name": "",
+            "xuehao": "201500794",
+            "password": "201500794",
+            "seat_id": "191052",
+            "time_start": "10:00",
+            "time_end": "22:00",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": false
+        },
+        {
+            "name": "",
+            "xuehao": "201500795",
+            "password": "201500795",
+            "seat_id": "191054",
+            "time_start": "10:30",
+            "time_end": "22:00",
+            "enableAutoReserve": true,
+            "enableAutoCheckin": true,
+            "enableAutoFinish": false
+        }
+    ]
+}
