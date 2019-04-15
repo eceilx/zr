@@ -180,6 +180,7 @@ class User():
         if m['success']:
             return m
             # todo ...
+        return None
 
     def scan_to_sit(self, seat_id):
         resp = self.base_request.scan_to_sit(self.user_id, seat_id)
@@ -189,3 +190,8 @@ class User():
     def scan_to_change(self, reservation_id, new_seat_id):
         resp = self.base_request.change_seat(new_seat_id, reservation_id)
         m = json.loads(resp)
+
+
+# -----------------------function function-----------------------
+def time_url_encode(time):
+    return (time+":00").replace(':', '%3A')

@@ -5,16 +5,8 @@ from gevent import monkey
 gevent.monkey.patch_all()
 import datetime
 import time
-from func import User
-from func import BaseRequest
-import config
+from func import *
 import json
-
-
-
-def time_url_encode(time):
-    return (time+":00").replace(':', '%3A')
-
 
 tomorrow = datetime.date.today()+datetime.timedelta(1)
 
@@ -39,6 +31,6 @@ if __name__ == "__main__":
     global cfg
     with open("/home/elx/PY/zr/config.json") as f:
         cfg = json.load(f)
-    print(cfg)
+    # print(cfg)
 
     gevent.joinall([gevent.spawn(reserve, u) for u in cfg['users']])

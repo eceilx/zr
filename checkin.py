@@ -1,20 +1,15 @@
 # -*- coding: UTF-8
 # 职位来
-
 import gevent
 from gevent import monkey
 gevent.monkey.patch_all()
-import json
-import time
-import config
-from func import BaseRequest
 from func import User
+from func import BaseRequest
+import time
+import json
 
 
 today = time.strftime('%Y-%m-%d', time.localtime())
-
-def time_url_encode(time):
-    return (time+":00").replace(':', '%3A')
 
 def checkin(u):
     if not u['enableAutoCheckin']:
@@ -22,13 +17,17 @@ def checkin(u):
     usr = User(u['xuehao'], u['password'], cfg['school_id'])
     usr.login()
     x = usr.get_current_reservation()
+    if not x:
+        print('⊙', usr.name, '此人没有预约')
+        return
+    isAnyCheckIn = False
     for rsv in x['list']:
         if today in rsv['timeDay']:
             usr.scan_to_sit(rsv['seatId'])
-            print(usr.name,rsv['seatNum'],'已签到')
-    
-
-
+            isAnyCheckIn = True
+            print('✓', usr.name, rsv['seatNum'], '已签到')
+    if not isAnyCheckIn:
+        print('✗', usr.name, '今天没有预约')
 
 if __name__ == "__main__":
     global cfg
@@ -37,4 +36,3 @@ if __name__ == "__main__":
     # print(cfg)
 
     gevent.joinall([gevent.spawn(checkin, u) for u in cfg['users']])
-

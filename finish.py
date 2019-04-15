@@ -2,7 +2,6 @@
 # 职位来
 import json
 import time
-import config
 from func import BaseRequest
 from func import User
 import gevent
@@ -10,9 +9,6 @@ from gevent import monkey
 gevent.monkey.patch_all()
 
 today = time.strftime('%Y-%m-%d', time.localtime())
-
-def time_url_encode(time):
-    return (time+":00").replace(':', '%3A')
 
 def finish(u):
     if not u['enableAutoCheckin']:
