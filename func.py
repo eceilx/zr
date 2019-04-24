@@ -200,5 +200,5 @@ def time_url_encode(time):
 
 def load_cfg():
     with open('config.yaml') as f:
-        cfg = yaml.load(f)
+        cfg = yaml.load(f, Loader=yaml.FullLoader)
         return cfg

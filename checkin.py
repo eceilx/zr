@@ -31,5 +31,5 @@ def checkin(u):
 if __name__ == "__main__":
     global cfg
     cfg = load_cfg()
-    print(cfg)
+
     gevent.joinall([gevent.spawn(checkin, u) for u in cfg['users']])
