@@ -3,10 +3,9 @@
 import gevent
 from gevent import monkey
 gevent.monkey.patch_all()
-from func import User
-from func import BaseRequest
+
+from func import *
 import time
-import json
 
 
 today = time.strftime('%Y-%m-%d', time.localtime())
@@ -31,8 +30,6 @@ def checkin(u):
 
 if __name__ == "__main__":
     global cfg
-    with open("config.json") as f:
-        cfg = json.load(f)
-    # print(cfg)
-
+    cfg = load_cfg()
+    print(cfg)
     gevent.joinall([gevent.spawn(checkin, u) for u in cfg['users']])

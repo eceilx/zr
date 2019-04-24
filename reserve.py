@@ -3,10 +3,9 @@
 import gevent
 from gevent import monkey
 gevent.monkey.patch_all()
+
 import datetime
-import time
 from func import *
-import json
 
 tomorrow = datetime.date.today()+datetime.timedelta(1)
 
@@ -29,8 +28,6 @@ def reserve(u):
 
 if __name__ == "__main__":
     global cfg
-    with open("/home/elx/PY/zr/config.json") as f:
-        cfg = json.load(f)
-    # print(cfg)
+    cfg = load_cfg()
 
     gevent.joinall([gevent.spawn(reserve, u) for u in cfg['users']])

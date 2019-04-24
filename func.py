@@ -1,5 +1,6 @@
 import requests
 import json
+import yaml
 
 # ---URL---
 BASE_URL = 'http://123.57.222.123:9901'
@@ -195,3 +196,9 @@ class User():
 # -----------------------function function-----------------------
 def time_url_encode(time):
     return (time+":00").replace(':', '%3A')
+
+
+def load_cfg():
+    with open('config.yaml') as f:
+        cfg = yaml.load(f)
+        return cfg
